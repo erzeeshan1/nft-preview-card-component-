@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>NFT Preview Card</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+    :root {
+      --bg-main: hsl(217, 54%, 11%);
+      --bg-card: hsl(216, 50%, 16%);
+      --blue: hsl(215, 51%, 70%);
+      --cyan: hsl(178, 100%, 50%);
+      --white: hsl(0, 0%, 100%);
+      --line: hsl(215, 32%, 27%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-main);
+      font-family: "Outfit", sans-serif;
+      color: var(--blue);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .main-card {
+      background: var(--bg-card);
+      width: min(87.5%, 22rem);
+      margin: 9.5rem auto;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin: auto;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .overlay, .view {
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+    }
+
+    .overlay {
+      background: var(--cyan);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .view {
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-container:hover .overlay {
+      opacity: 0.5;
+    }
+
+    .image-container:hover .view {
+      display: flex;
+    }
+
+    .title {
+      color: var(--white);
+      margin: 1.4rem 0 0.75rem;
+      font-size: 1.4rem;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .eth-info, .creator-info {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 0;
+    }
+
+    .eth {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .icon {
+      margin-right: 0.5rem;
+    }
+
+    .avatar {
+      border: 1px solid var(--white);
+      border-radius: 50%;
+      width: 2rem;
+      margin-right: 1rem;
+    }
+
+    .creator-name, .title:hover {
+      color: var(--cyan);
+      cursor: pointer;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: -6rem;
+      margin-bottom: 5rem;
+    }
+
+    .attribution a {
+      color:rgb(220, 126, 27);
+      text-decoration: none;
+    }
+
+    .attribution a:hover {
+      color: var(--cyan);
+    }
+
+    @media (max-width: 300px) {
+      .eth-info {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <section class="main-card">
+      <div class="image-container">
+        <img src="images/image-equilibrium.jpg" alt="NFT artwork for Equilibrium #3429" class="main-image">
+        <div class="overlay"></div>
+        <div class="view">
+          <img src="images/icon-view.svg" alt="View icon overlay for Equilibrium NFT">
+        </div>
+      </div>
+      <h1 class="title">Equilibrium #3429</h1>
+      <p class="description">Our Equilibrium collection promotes balance and calm.</p>
+      <div class="eth-info">
+        <div><img src="images/icon-ethereum.svg" alt="ETH" class="icon"><span class="eth">0.041 ETH</span></div>
+        <div><img src="images/icon-clock.svg" alt="clock" class="icon"><span>3 days left</span></div>
+      </div>
+      <div class="creator-info">
+        <img src="images/image-avatar.png" alt="Jules Wyvern" class="avatar">
+        <p>Creation of <span class="creator-name">Jules Wyvern</span></p>
+      </div>
+    </section>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Zeeshan Raza</a>.
+  </footer>
+</body>
+
+</html>
